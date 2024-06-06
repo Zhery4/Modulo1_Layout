@@ -1,0 +1,57 @@
+@use "base" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 10px;
+}
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 10px;
+
+}
+
+.container-3 {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.color-box-text {
+    text-align: center
+}
+
+@for $i from 1 through 3 {
+    .container-#{$i} {
+        @if $i ==1 {
+            @include apply-colors($base-color, $i);
+        }
+
+        @else if $i ==2 {
+            @include apply-colors($primary-color, $i);
+        }
+
+        @else if $i ==3 {
+            @include apply-colors($secondary-color, $i);
+        }
+
+    }
+}

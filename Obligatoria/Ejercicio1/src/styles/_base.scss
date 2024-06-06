@@ -1,0 +1,48 @@
+@use 'sass:math';
+$base-color: #343090;
+$primary-color: #a8dadc;
+$secondary-color: #fb8500;
+
+$font-color-base: #aaa;
+
+
+@mixin apply-variant-darken-color($color: $base-color, $variant, $value) {
+    background-color: darken($color, $value * 5%);
+}
+
+@mixin apply-variant-lighten-color($color: $base-color, $variant, $value) {
+    background-color: lighten($color, $value * 5%);
+}
+
+@mixin apply-colors($color: $base-color, $containerid) {
+    $i: 1;
+
+    @for $i from 1 through 4 {
+        .darken-#{$i} {
+            @include apply-variant-darken-color($color, $i, $i);
+
+            .color-box-text {
+                color: lighten($font-color-base, $i * 10%)
+            }
+        }
+
+        $i: $i + 1;
+    }
+
+    @for $i from 1 through 4 {
+        .lighten-#{$i} {
+            @include apply-variant-lighten-color($color, $i, $i);
+
+            .color-box-text {
+                color: darken($font-color-base, $i * 20%)
+            }
+        }
+
+        $i: $i + 1;
+    }
+
+    .base-color {
+        background-color: $color;
+        color: $font-color-base;
+    }
+}
