@@ -1,0 +1,9 @@
+# Ignore package-lock.json
+package-lock.json
+# Ignore node_modules directory
+node_modules/
+# Ignore Parcel build output directory
+dist/
+
+# Ignore Parcel cache directory
+.parcel-cache/

@@ -1,0 +1,50 @@
+@use "_theme-dark" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 10px;
+    font-family: $font-primary;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+    border-radius: $border-radius;
+    text-align: center;
+}
+
+.box-base {
+    @extend .box;
+    background-color: $color-base;
+}
+
+.box-important {
+    @extend .box;
+    background-color: $color-important;
+}
+
+.box-warning {
+    @extend .box;
+    background-color: $color-warning;
+}
+
+.box-shadow {
+    @extend .box;
+    box-shadow: $box-shadow;
+}
+
+.secondary-font {
+    font-family: $secondary-font;
+}
