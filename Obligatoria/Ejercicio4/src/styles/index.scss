@@ -1,0 +1,75 @@
+@use "base" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 50px;
+    font-family: $font-family;
+    font-size: $text-size;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 20rem;
+    border: 1px solid black;
+    gap: 2rem;
+    box-shadow: 2rem;
+}
+
+.card-image {
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 15rem;
+}
+
+.card-title {
+    font-size: $text-size-title;
+}
+
+.card-content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding: 0 1rem;
+}
+
+.card-content-date {
+    justify-self: end;
+    font-size: $text-size-subtitle;
+    font-weight: bold;
+
+    .date {
+        color: $primary;
+        font-weight: normal;
+    }
+}
+
+
+
+.card-action {
+    justify-self: center;
+    padding: 1rem 0;
+}
+
+.button {
+    padding: 1rem;
+    border: none;
+    width: 15rem;
+    cursor: pointer;
+}
+
+.button-primary {
+    @extend .button;
+    background-color: $primary;
+    color: white;
+
+    &:hover {
+        background-color: darken($primary, 10%);
+    }
+
+}
